@@ -26,7 +26,7 @@ export default function HomePage() {
           <CountryCard />
           <CountryCard />
           <CountryCard />
-          <CountryCard />w
+          <CountryCard />
         </div>
       </main>
     </>
