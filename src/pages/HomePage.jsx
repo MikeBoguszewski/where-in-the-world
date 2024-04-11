@@ -31,15 +31,15 @@ export default function HomePage() {
   return (
     <>
       <Header />
-      <main className="px-24 bg-slate-50">
-        <div className="flex justify-between py-16">
+      <main className="px-24">
+        <div className="flex justify-between flex-col lg:flex-row py-16">
           <search>
-            <form className="flex shadow py-5 px-8 gap-6 w-[34rem] rounded bg-white" onSubmit={searchForCountry}>
-              <img src="src/assets/search.svg" alt="search" />
+            <form className="flex shadow py-5 px-8 mb-16 gap-6 max-w-[34rem] lg:w-[34rem] h-16 rounded bg-white" onSubmit={searchForCountry}>
+              <img src="/src/assets/search.svg" alt="search" />
               <input name="search" type="text" placeholder="Search for a country..." className="w-full p-1" onChange={(event) => setSearch(event.target.value)} value={search}></input>
             </form>
           </search>
-          <select className="shadow p-2 rounded" defaultValue="" onChange={(event) => setRegion(event.target.value)}>
+          <select className="shadow p-2 rounded w-52 h-16" defaultValue="" onChange={(event) => setRegion(event.target.value)}>
             <option disabled value="">
               Filter by Region
             </option>
