@@ -9,13 +9,12 @@ export default function HomePage() {
     const fetchCountries = async () => {
       const response = await fetch("https://restcountries.com/v3.1/all");
       const data = await response.json();
-      console.log(data)
+      console.log(data);
       if (region) {
         setCountries(data.filter((country) => country.region === region));
       } else {
-        setCountries(data)
+        setCountries(data);
       }
-      
     };
     fetchCountries();
   }, [region]);
@@ -24,9 +23,16 @@ export default function HomePage() {
     event.preventDefault();
     const response = await fetch(`https://restcountries.com/v3.1/name/${search}`);
     const data = await response.json();
-    setCountries(data.filter((country) => country.region === region));
-    console.log(search)
-    console.log(data)
+    let searchedCountries;
+    if (region) {
+      searchedCountries = data.filter((country) => country.region === region);
+    } else {
+      searchedCountries = data;
+    }
+
+    setCountries(searchedCountries);
+    console.log(searchedCountries);
+    console.log(data);
   };
   return (
     <>
