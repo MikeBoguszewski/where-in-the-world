@@ -35,7 +35,7 @@ export default function HomePage() {
         <div className="flex justify-between py-16">
           <search>
             <form className="flex shadow py-5 px-8 gap-6 w-[34rem] rounded bg-white" onSubmit={searchForCountry}>
-              <img src="src/assets/search.svg" alt="search"></img>
+              <img src="src/assets/search.svg" alt="search" />
               <input name="search" type="text" placeholder="Search for a country..." className="w-full p-1" onChange={(event) => setSearch(event.target.value)} value={search}></input>
             </form>
           </search>
