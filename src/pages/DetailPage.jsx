@@ -50,8 +50,10 @@ export default function DetailPage() {
     <>
       <Header />
       <div className="p-12 leading-loose">
-        <a href="/" className="shadow-2xl bg-white w-32 rounded mb-16 h-10 flex items-center justify-center gap-2">
-          <img src="/src/assets/arrow-left.svg" alt="back-arrow" />
+        <a href="/" className="shadow-2xl bg-white dark:bg-slate-700 w-32 rounded mb-16 h-10 flex items-center justify-center gap-2">
+          <svg xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 -960 960 960" width="24">
+            <path d="M400-240 160-480l240-240 56 58-142 142h486v80H314l142 142-56 58Z" className="dark:fill-white" />
+          </svg>
           Back
         </a>
         <div className="flex flex-col lg:flex-row lg:gap-32 lg:items-center lg:justify-center">
@@ -78,7 +80,7 @@ export default function DetailPage() {
               </div>
               <div className="mb-8">
                 <p>
-                  <span className="font-medium">Top Level Domain:</span> {country?.tld}
+                  <span className="font-medium">Top Level Domain:</span> {country?.tld?.join(", ")}
                 </p>
                 <p>
                   <span className="font-medium">Currencies:</span> {currencies.join(", ")}
@@ -90,9 +92,9 @@ export default function DetailPage() {
             </div>
 
             <h2 className="font-medium mb-5">Border Countries:</h2>
-            <div className="flex gap-5">
+            <div className="flex flex-wrap gap-5">
               {borderingCountries.map((borderingCountry, index) => (
-                <a key={index} href={`/detail/${borderingCountry}`} className="shadow-2xl bg-white w-32 rounded mb-16 h-10 flex items-center justify-center leading-none text-center">
+                <a key={index} href={`/detail/${borderingCountry}`} className="shadow-2xl bg-white dark:bg-slate-700 w-32 rounded mb-16 h-10 flex items-center justify-center leading-none text-center">
                   {borderingCountry}
                 </a>
               ))}
