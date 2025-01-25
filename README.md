@@ -21,6 +21,7 @@ Users should be able to:
 ## **Links**
 
 - Live Demo: https://where-in-the-world-z7sl.onrender.com
+  **Note:** The app may take up to a minute to start up due to limited resources.
 - GitHub Repository: https://github.com/MikeBoguszewski/where-in-the-world
 
 ---
